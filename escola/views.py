@@ -25,6 +25,7 @@ class MatriculaViewSet(viewsets.ModelViewSet):
 
 
 class ListaMatriculaEstudante(generics.ListAPIView):
+
     def get_queryset(self):
         queryset = Matricula.objects.filter(estudante_id=self.kwargs["pk"])
         return queryset
@@ -33,6 +34,7 @@ class ListaMatriculaEstudante(generics.ListAPIView):
 
 
 class ListaMatriculaCurso(generics.ListAPIView):
+
     def get_queryset(self):
         queryset = Matricula.objects.filter(curso_id=self.kwargs["pk"])
         return queryset
